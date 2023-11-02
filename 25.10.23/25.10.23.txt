@@ -1,0 +1,53 @@
+HTML5
+GoogleMaps API
+CSS3
+2d transform
+Animation
+    Multi columns
+Box Sizing
+Google Maps:
+function initMap() {
+    const center = new google.maps.LatLong(latitude, longitude);
+    const map = new google.maps.Map(document.getElementById('divRef'), {
+        center: center,
+        zoom: 12
+    });
+    const marker = new google.maps.Marker({
+        position: center
+    });
+    marker.setMap(map);
+}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzWiOJOgrTfPipicFDKY3tv6WLVkITx38&callback=initMap"></script>
+1. Create a Project in Google Cloud Console:
+Go to the Google Cloud Console.
+Create a new project or select an existing project where you want to enable the Maps APIs.
+Enable the Maps APIs:
+In the Cloud Console, navigate to the "APIs & Services" > "Dashboard" from the left-hand menu.
+Click on the "+ ENABLE APIS AND SERVICES" button.
+Search for the specific Maps API you want to use (e.g., Maps JavaScript API, Places API, Geocoding API, etc.), and click on it.
+Click the "Enable" button for that API.
+2. Create API Key:
+In the Cloud Console, navigate to "APIs & Services" > "Credentials" from the left-hand menu.
+Click the "Create credentials" button and select "API key."
+A new API key will be generated.
+3. Restrict Your API Key (Optional but Recommended):
+To secure your API key, you should restrict its usage. Go to the "APIs & Services" > "Credentials" page, click on your API key, and then configure restrictions.
+You can set restrictions by IP addresses, websites, and more to prevent unauthorized usage.
+Usage in Your Application:
+Use your API key when making requests to Google Maps services from your application.
+Multi Columns Layout:
+Multi Column Layout allows easy definition of multiple columns of text. 
+Properties:
+1)  Column-count
+2)  Column-gap
+3)  Column-rule-style
+4)  Column-rule-color
+5)  Column-rule-width
+6)  Column-width
+Box-Sizing: 
+By default, the width and height of an element is calculated like this:
+width + padding + border = actual width of an element
+height + padding + border = actual height of an element
+    Syntax:
+        box-sizing: border-box | content-box;
+When we use border-box, padding and border

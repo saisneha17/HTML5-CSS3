@@ -1,0 +1,17 @@
+CSS3
+2d transform
+Animation
+Transformations: A transformation is an effect that lets an element to change shape, size and position. 
+> CSS transformations allow you to translate rotate, scale and skew elements.
+Transform: translate(px, px); - Moves the element from one position to another position.
+Transform: rotate(deg); - Rotates the element from 0 to 360 degrees.
+Transform: scale(1, 1); - Increases/Decreases size of the element.
+Transform: skew(deg, deg); - Skews the element by x-axis / y-axis direction by degrees.
+Transitions: Transitions allow you to change properties smoothly from one value to another.
+green - yellow
+10px - 15px
+Transition-delay
+Transition-duration
+Transition-property
+Transition-timing-function
+transition: property duration timing-function delay|initial|inherit;

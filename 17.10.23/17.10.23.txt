@@ -1,0 +1,10 @@
+Geo Location:
+> Used to retrieve the geographical location of the user.
+navigator.geolocation.getCurrentPosition(showPosition, showError);
+function showPosition(successResponse) {
+}
+function showError(failureResponse) {
+}
+To get location information (such as city, country, or other details) based on latitude and longitude using a third-party API, you can use services like the "Reverse Geocoding" feature provided by various APIs. One popular option is the "OpenCage Geocoding API." Here's how you can use it in a JavaScript/Node.js application:
+Sign Up for an API Key:
+First, sign up for an API key on the OpenCage Data website: https://opencagedata.com/users/sign_up

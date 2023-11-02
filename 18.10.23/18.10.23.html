@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #border-image {
+            width: 400px;
+            height: 100px;
+            border: 10px solid black;
+            border-radius: 8px;
+            border-image: url('https://www.w3schools.com/cssref/border.png') 30 stretch;
+        }
+        #multiple-backgrounds {
+            width: 800px;
+            height: 500px;
+            background-position: top left, top right, bottom right, bottom left;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+            background-size: 200px, 200px, 200px, 200px;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/angles-top-left.svg),
+                            url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/angles-top-right.svg),
+                            url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/angles-bottom-right.svg),
+                            url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/angles-bottom-left.svg);
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="border-image">
+
+    </div>
+
+    <div id="multiple-backgrounds">
+
+    </div>
+
+</body>
+</html>

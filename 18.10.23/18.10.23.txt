@@ -1,0 +1,27 @@
+Rounded Corners:
+Syntax:
+    border-radius: 5px;
+Border Images:
+    border-image: url() slice round | stretch;
+Multi Background:
+    background-image: url(), url()
+    background-repeat: no-repeat, no-repeat
+CSS Gradients:
+CSS gradients let you display smooth transitions between two or more specified colors.
+Types of Gradients:
+Linear Gradients (goes down/up/left/right/diagonally)
+Radial Gradients (defined by their center)
+Conic Gradients (rotated around a center point)
+Linear Gradients:
+    Syntax:
+        
+        background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+Radial Gradients:
+    Syntax:
+        background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+Conic Gradients:
+    Syntax:
+        background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...);
+Shadow:
+    Syntax:
+        box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;

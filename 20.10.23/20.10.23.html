@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Current Time: <span id="currentTime"></span></h2>
+    <h2>Session Time Left: <span id="timeLeft"></span></h2>
+    <script>
+
+        setInterval(() => {
+            const dateObj = new Date();
+            const currentTimeStamp = dateObj.getDate() + '/' + (dateObj.getMonth() + 1) +  '/' + dateObj.getFullYear() + ' ' + dateObj.getHours() + ':' + dateObj.getMinutes() + ':' + dateObj.getSeconds();
+            document.getElementById('currentTime').innerHTML = currentTimeStamp;
+        }, 1000);
+
+        const worker = new Worker('./20.10.23-web-worker.js');
+
+        worker.onmessage = (message) => {
+            if (message.data === 'Your session has been completed, Please Login') {
+                alert(message.data);
+            } else {
+                document.getElementById('timeLeft').innerHTML = message.data;
+            }
+        }
+
+    </script>
+</body>
+</html>

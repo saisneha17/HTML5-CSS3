@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Location" id="location" type="text" />
+    <button id="locate-me-btn">Locate Me</button>
+    <p id="errorMsg"></p>
+    <script>
+
+        document.getElementById('locate-me-btn').addEventListener('click', function() {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+
+            function showPosition(response) {
+                console.log(response.coords);
+                document.getElementById('errorMsg').innerHTML = 'Latitude: ' + response.coords.latitude + ' Longitude: ' + response.coords.longitude;
+
+                const httpRequest = new XMLHttpRequest();
+
+                httpRequest.onreadystatechange = function() {
+                    if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                        console.log(JSON.parse(httpRequest.responseText).results[0].formatted);
+                        document.getElementById('location').value = JSON.parse(httpRequest.responseText).results[0].formatted;
+                    }
+                }
+
+                httpRequest.open('GET', 'https://api.opencagedata.com/geocode/v1/json?q=' + response.coords.latitude + '+' + response.coords.longitude + '&key=04fd77fe0ed64e018775fdf5e51c4f5f');
+                httpRequest.send();
+            }
+
+            function showError(error) {
+                let errorMsg = document.getElementById('errorMsg');
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        errorMsg.innerHTML = "User denied the request for Geolocation."
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        errorMsg.innerHTML = "Location information is unavailable."
+                        break;
+                    case error.TIMEOUT:
+                        errorMsg.innerHTML = "The request to get user location timed out."
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        errorMsg.innerHTML = "An unknown error occurred."
+                        break;
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>
